@@ -31,6 +31,7 @@ conf/slaves
 docs/_site
 docs/api
 target/
+result/
 reports/
 .project
 .classpath
