@@ -1,298 +1,299 @@
 Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
-15/01/19 18:48:18 INFO SparkContext: Running Spark version 1.3.0-SNAPSHOT
-15/01/19 18:48:18 WARN Utils: Your hostname, lks21c-ubuntu resolves to a loopback address: 127.0.0.1; using 10.10.21.40 instead (on interface eth0)
-15/01/19 18:48:18 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
-15/01/19 18:48:28 INFO SecurityManager: Changing view acls to: lks21c
-15/01/19 18:48:28 INFO SecurityManager: Changing modify acls to: lks21c
-15/01/19 18:48:28 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(lks21c); users with modify permissions: Set(lks21c)
-15/01/19 18:48:28 INFO Slf4jLogger: Slf4jLogger started
-15/01/19 18:48:28 INFO Remoting: Starting remoting
-15/01/19 18:48:28 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@10.10.21.40:48049]
-15/01/19 18:48:28 INFO Utils: Successfully started service 'sparkDriver' on port 48049.
-15/01/19 18:48:28 INFO SparkEnv: Registering MapOutputTracker
-15/01/19 18:48:28 INFO SparkEnv: Registering BlockManagerMaster
-15/01/19 18:48:28 INFO DiskBlockManager: Created local directory at /tmp/spark-local-20150119184828-53a1
-15/01/19 18:48:28 INFO MemoryStore: MemoryStore started with capacity 265.1 MB
-15/01/19 18:48:28 INFO HttpFileServer: HTTP File server directory is /tmp/spark-a5ec853a-e19d-46c9-b206-07dc237cf13d
-15/01/19 18:48:28 INFO HttpServer: Starting HTTP Server
-15/01/19 18:48:29 INFO Utils: Successfully started service 'HTTP file server' on port 57000.
-15/01/19 18:48:29 INFO Utils: Successfully started service 'SparkUI' on port 4040.
-15/01/19 18:48:29 INFO SparkUI: Started SparkUI at http://10.10.21.40:4040
-15/01/19 18:48:29 INFO SparkContext: Added JAR file:/home/lks21c/repo/spark/sample/target/simple-project-1.0.jar at http://10.10.21.40:57000/jars/simple-project-1.0.jar with timestamp 1421660909230
-15/01/19 18:48:29 INFO AkkaUtils: Connecting to HeartbeatReceiver: akka.tcp://sparkDriver@10.10.21.40:48049/user/HeartbeatReceiver
-15/01/19 18:48:29 INFO NettyBlockTransferService: Server created on 48374
-15/01/19 18:48:29 INFO BlockManagerMaster: Trying to register BlockManager
-15/01/19 18:48:29 INFO BlockManagerMasterActor: Registering block manager localhost:48374 with 265.1 MB RAM, BlockManagerId(<driver>, localhost, 48374)
-15/01/19 18:48:29 INFO BlockManagerMaster: Registered BlockManager
-15/01/19 18:48:29 INFO MemoryStore: ensureFreeSpace(32728) called with curMem=0, maxMem=278019440
-15/01/19 18:48:29 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 32.0 KB, free 265.1 MB)
-15/01/19 18:48:29 INFO MemoryStore: ensureFreeSpace(4959) called with curMem=32728, maxMem=278019440
-15/01/19 18:48:29 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 4.8 KB, free 265.1 MB)
-15/01/19 18:48:29 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:48374 (size: 4.8 KB, free: 265.1 MB)
-15/01/19 18:48:29 INFO BlockManagerMaster: Updated info of block broadcast_0_piece0
-15/01/19 18:48:29 INFO SparkContext: Created broadcast 0 from textFile at SimpleApp.java:31
-15/01/19 18:48:29 INFO SparkContext: Starting job: count at SimpleApp.java:41
-15/01/19 18:48:29 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-15/01/19 18:48:29 WARN LoadSnappy: Snappy native library not loaded
-15/01/19 18:48:29 INFO FileInputFormat: Total input paths to process : 1
-15/01/19 18:48:29 INFO DAGScheduler: Registering RDD 2 (mapToPair at SimpleApp.java:33)
-15/01/19 18:48:29 INFO DAGScheduler: Got job 0 (count at SimpleApp.java:41) with 4 output partitions (allowLocal=false)
-15/01/19 18:48:29 INFO DAGScheduler: Final stage: Stage 1(count at SimpleApp.java:41)
-15/01/19 18:48:29 INFO DAGScheduler: Parents of final stage: List(Stage 0)
-15/01/19 18:48:29 INFO DAGScheduler: Missing parents: List(Stage 0)
-15/01/19 18:48:29 INFO DAGScheduler: Submitting Stage 0 (MapPartitionsRDD[2] at mapToPair at SimpleApp.java:33), which has no missing parents
-15/01/19 18:48:30 INFO MemoryStore: ensureFreeSpace(3296) called with curMem=37687, maxMem=278019440
-15/01/19 18:48:30 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 3.2 KB, free 265.1 MB)
-15/01/19 18:48:30 INFO MemoryStore: ensureFreeSpace(2403) called with curMem=40983, maxMem=278019440
-15/01/19 18:48:30 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 2.3 KB, free 265.1 MB)
-15/01/19 18:48:30 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on localhost:48374 (size: 2.3 KB, free: 265.1 MB)
-15/01/19 18:48:30 INFO BlockManagerMaster: Updated info of block broadcast_1_piece0
-15/01/19 18:48:30 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:839
-15/01/19 18:48:30 INFO DAGScheduler: Submitting 2 missing tasks from Stage 0 (MapPartitionsRDD[2] at mapToPair at SimpleApp.java:33)
-15/01/19 18:48:30 INFO TaskSchedulerImpl: Adding task set 0.0 with 2 tasks
-15/01/19 18:48:30 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, PROCESS_LOCAL, 1354 bytes)
-15/01/19 18:48:30 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, localhost, PROCESS_LOCAL, 1354 bytes)
-15/01/19 18:48:30 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
-15/01/19 18:48:30 INFO Executor: Fetching http://10.10.21.40:57000/jars/simple-project-1.0.jar with timestamp 1421660909230
-15/01/19 18:48:30 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
-15/01/19 18:48:30 INFO Utils: Fetching http://10.10.21.40:57000/jars/simple-project-1.0.jar to /tmp/spark-74d9fb91-8bb5-4940-9fc0-a8e3d7b216a7/fetchFileTemp4764631607966342956.tmp
-15/01/19 18:48:30 INFO Executor: Adding file:/tmp/spark-74d9fb91-8bb5-4940-9fc0-a8e3d7b216a7/simple-project-1.0.jar to class loader
-15/01/19 18:48:30 INFO HadoopRDD: Input split: file:/home/lks21c/repo/spark/sample/in:27944643+27944643
-15/01/19 18:48:30 INFO HadoopRDD: Input split: file:/home/lks21c/repo/spark/sample/in:0+27944643
-15/01/19 18:48:35 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 1898 bytes result sent to driver
-15/01/19 18:48:35 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 4980 ms on localhost (1/2)
-15/01/19 18:48:35 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1898 bytes result sent to driver
-15/01/19 18:48:35 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 5015 ms on localhost (2/2)
-15/01/19 18:48:35 INFO DAGScheduler: Stage 0 (mapToPair at SimpleApp.java:33) finished in 5.030 s
-15/01/19 18:48:35 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool
-15/01/19 18:48:35 INFO DAGScheduler: looking for newly runnable stages
-15/01/19 18:48:35 INFO DAGScheduler: running: Set()
-15/01/19 18:48:35 INFO DAGScheduler: waiting: Set(Stage 1)
-15/01/19 18:48:35 INFO DAGScheduler: failed: Set()
-15/01/19 18:48:35 INFO DAGScheduler: Missing parents for Stage 1: List()
-15/01/19 18:48:35 INFO DAGScheduler: Submitting Stage 1 (ShuffledRDD[3] at partitionBy at SimpleApp.java:40), which is now runnable
-15/01/19 18:48:35 INFO MemoryStore: ensureFreeSpace(1792) called with curMem=43386, maxMem=278019440
-15/01/19 18:48:35 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 1792.0 B, free 265.1 MB)
-15/01/19 18:48:35 INFO MemoryStore: ensureFreeSpace(1319) called with curMem=45178, maxMem=278019440
-15/01/19 18:48:35 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 1319.0 B, free 265.1 MB)
-15/01/19 18:48:35 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on localhost:48374 (size: 1319.0 B, free: 265.1 MB)
-15/01/19 18:48:35 INFO BlockManagerMaster: Updated info of block broadcast_2_piece0
-15/01/19 18:48:35 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:839
-15/01/19 18:48:35 INFO DAGScheduler: Submitting 4 missing tasks from Stage 1 (ShuffledRDD[3] at partitionBy at SimpleApp.java:40)
-15/01/19 18:48:35 INFO TaskSchedulerImpl: Adding task set 1.0 with 4 tasks
-15/01/19 18:48:35 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 2, localhost, PROCESS_LOCAL, 1118 bytes)
-15/01/19 18:48:35 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 3, localhost, PROCESS_LOCAL, 1118 bytes)
-15/01/19 18:48:35 INFO TaskSetManager: Starting task 2.0 in stage 1.0 (TID 4, localhost, PROCESS_LOCAL, 1118 bytes)
-15/01/19 18:48:35 INFO TaskSetManager: Starting task 3.0 in stage 1.0 (TID 5, localhost, PROCESS_LOCAL, 1118 bytes)
-15/01/19 18:48:35 INFO Executor: Running task 0.0 in stage 1.0 (TID 2)
-15/01/19 18:48:35 INFO Executor: Running task 1.0 in stage 1.0 (TID 3)
-15/01/19 18:48:35 INFO CacheManager: Partition rdd_3_0 not found, computing it
-15/01/19 18:48:35 INFO Executor: Running task 3.0 in stage 1.0 (TID 5)
-15/01/19 18:48:35 INFO Executor: Running task 2.0 in stage 1.0 (TID 4)
-15/01/19 18:48:35 INFO CacheManager: Partition rdd_3_1 not found, computing it
-15/01/19 18:48:35 INFO CacheManager: Partition rdd_3_2 not found, computing it
-15/01/19 18:48:35 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 2 blocks
-15/01/19 18:48:35 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 2 blocks
-15/01/19 18:48:35 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 9 ms
-15/01/19 18:48:35 INFO CacheManager: Partition rdd_3_3 not found, computing it
-15/01/19 18:48:35 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 2 blocks
-15/01/19 18:48:35 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
-15/01/19 18:48:35 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 5 ms
-15/01/19 18:48:35 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 2 blocks
-15/01/19 18:48:35 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 13 ms
-15/01/19 18:48:37 INFO MemoryStore: ensureFreeSpace(57000016) called with curMem=46497, maxMem=278019440
-15/01/19 18:48:37 INFO MemoryStore: Block rdd_3_1 stored as values in memory (estimated size 54.4 MB, free 210.7 MB)
-15/01/19 18:48:37 INFO BlockManagerInfo: Added rdd_3_1 in memory on localhost:48374 (size: 54.4 MB, free: 210.8 MB)
-15/01/19 18:48:37 INFO BlockManagerMaster: Updated info of block rdd_3_1
-15/01/19 18:48:38 INFO MemoryStore: ensureFreeSpace(57000016) called with curMem=57046513, maxMem=278019440
-15/01/19 18:48:38 INFO MemoryStore: Block rdd_3_0 stored as values in memory (estimated size 54.4 MB, free 156.4 MB)
-15/01/19 18:48:38 INFO BlockManagerInfo: Added rdd_3_0 in memory on localhost:48374 (size: 54.4 MB, free: 156.4 MB)
-15/01/19 18:48:38 INFO BlockManagerMaster: Updated info of block rdd_3_0
-15/01/19 18:48:38 INFO MemoryStore: ensureFreeSpace(57000016) called with curMem=114046529, maxMem=278019440
-15/01/19 18:48:38 INFO MemoryStore: Block rdd_3_3 stored as values in memory (estimated size 54.4 MB, free 102.0 MB)
-15/01/19 18:48:38 INFO Executor: Finished task 0.0 in stage 1.0 (TID 2). 1431 bytes result sent to driver
-15/01/19 18:48:38 INFO BlockManagerInfo: Added rdd_3_3 in memory on localhost:48374 (size: 54.4 MB, free: 102.1 MB)
-15/01/19 18:48:38 INFO Executor: Finished task 1.0 in stage 1.0 (TID 3). 1431 bytes result sent to driver
-15/01/19 18:48:38 INFO BlockManagerMaster: Updated info of block rdd_3_3
-15/01/19 18:48:38 INFO Executor: Finished task 3.0 in stage 1.0 (TID 5). 1431 bytes result sent to driver
-15/01/19 18:48:38 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 2) in 2999 ms on localhost (1/4)
-15/01/19 18:48:38 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 3) in 2998 ms on localhost (2/4)
-15/01/19 18:48:38 INFO TaskSetManager: Finished task 3.0 in stage 1.0 (TID 5) in 3004 ms on localhost (3/4)
-15/01/19 18:48:38 INFO MemoryStore: ensureFreeSpace(57000016) called with curMem=171046545, maxMem=278019440
-15/01/19 18:48:38 INFO MemoryStore: Block rdd_3_2 stored as values in memory (estimated size 54.4 MB, free 47.7 MB)
-15/01/19 18:48:38 INFO BlockManagerInfo: Added rdd_3_2 in memory on localhost:48374 (size: 54.4 MB, free: 47.7 MB)
-15/01/19 18:48:38 INFO BlockManagerMaster: Updated info of block rdd_3_2
-15/01/19 18:48:38 INFO Executor: Finished task 2.0 in stage 1.0 (TID 4). 1431 bytes result sent to driver
-15/01/19 18:48:38 INFO TaskSetManager: Finished task 2.0 in stage 1.0 (TID 4) in 3202 ms on localhost (4/4)
-15/01/19 18:48:38 INFO DAGScheduler: Stage 1 (count at SimpleApp.java:41) finished in 3.203 s
-15/01/19 18:48:38 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool
-15/01/19 18:48:38 INFO DAGScheduler: Job 0 finished: count at SimpleApp.java:41, took 8.421457 s
+15/01/19 20:05:41 INFO SparkContext: Running Spark version 1.3.0-SNAPSHOT
+15/01/19 20:05:41 WARN Utils: Your hostname, lks21c-ubuntu resolves to a loopback address: 127.0.0.1; using 10.10.21.40 instead (on interface eth0)
+15/01/19 20:05:41 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+15/01/19 20:05:41 INFO SecurityManager: Changing view acls to: lks21c
+15/01/19 20:05:41 INFO SecurityManager: Changing modify acls to: lks21c
+15/01/19 20:05:41 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(lks21c); users with modify permissions: Set(lks21c)
+15/01/19 20:05:41 INFO Slf4jLogger: Slf4jLogger started
+15/01/19 20:05:41 INFO Remoting: Starting remoting
+15/01/19 20:05:41 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@10.10.21.40:58216]
+15/01/19 20:05:41 INFO Utils: Successfully started service 'sparkDriver' on port 58216.
+15/01/19 20:05:41 INFO SparkEnv: Registering MapOutputTracker
+15/01/19 20:05:41 INFO SparkEnv: Registering BlockManagerMaster
+15/01/19 20:05:41 INFO DiskBlockManager: Created local directory at /tmp/spark-local-20150119200541-128a
+15/01/19 20:05:41 INFO MemoryStore: MemoryStore started with capacity 265.1 MB
+15/01/19 20:05:41 INFO HttpFileServer: HTTP File server directory is /tmp/spark-3f5029a1-f170-4ae0-9992-d2726cc453e1
+15/01/19 20:05:41 INFO HttpServer: Starting HTTP Server
+15/01/19 20:05:41 INFO Utils: Successfully started service 'HTTP file server' on port 55794.
+15/01/19 20:05:42 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+15/01/19 20:05:42 INFO SparkUI: Started SparkUI at http://10.10.21.40:4040
+15/01/19 20:05:42 INFO SparkContext: Added JAR file:/home/lks21c/repo/spark/sample/target/simple-project-1.0.jar at http://10.10.21.40:55794/jars/simple-project-1.0.jar with timestamp 1421665542111
+15/01/19 20:05:42 INFO AkkaUtils: Connecting to HeartbeatReceiver: akka.tcp://sparkDriver@10.10.21.40:58216/user/HeartbeatReceiver
+15/01/19 20:05:42 INFO NettyBlockTransferService: Server created on 42588
+15/01/19 20:05:42 INFO BlockManagerMaster: Trying to register BlockManager
+15/01/19 20:05:42 INFO BlockManagerMasterActor: Registering block manager localhost:42588 with 265.1 MB RAM, BlockManagerId(<driver>, localhost, 42588)
+15/01/19 20:05:42 INFO BlockManagerMaster: Registered BlockManager
+15/01/19 20:05:42 INFO MemoryStore: ensureFreeSpace(32728) called with curMem=0, maxMem=278019440
+15/01/19 20:05:42 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 32.0 KB, free 265.1 MB)
+15/01/19 20:05:42 INFO MemoryStore: ensureFreeSpace(4959) called with curMem=32728, maxMem=278019440
+15/01/19 20:05:42 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 4.8 KB, free 265.1 MB)
+15/01/19 20:05:42 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:42588 (size: 4.8 KB, free: 265.1 MB)
+15/01/19 20:05:42 INFO BlockManagerMaster: Updated info of block broadcast_0_piece0
+15/01/19 20:05:42 INFO SparkContext: Created broadcast 0 from textFile at SimpleApp.java:31
+15/01/19 20:05:42 INFO SparkContext: Starting job: count at SimpleApp.java:41
+15/01/19 20:05:42 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+15/01/19 20:05:42 WARN LoadSnappy: Snappy native library not loaded
+15/01/19 20:05:42 INFO FileInputFormat: Total input paths to process : 1
+15/01/19 20:05:42 INFO DAGScheduler: Registering RDD 2 (mapToPair at SimpleApp.java:33)
+15/01/19 20:05:42 INFO DAGScheduler: Got job 0 (count at SimpleApp.java:41) with 4 output partitions (allowLocal=false)
+15/01/19 20:05:42 INFO DAGScheduler: Final stage: Stage 1(count at SimpleApp.java:41)
+15/01/19 20:05:42 INFO DAGScheduler: Parents of final stage: List(Stage 0)
+15/01/19 20:05:42 INFO DAGScheduler: Missing parents: List(Stage 0)
+15/01/19 20:05:42 INFO DAGScheduler: Submitting Stage 0 (MapPartitionsRDD[2] at mapToPair at SimpleApp.java:33), which has no missing parents
+15/01/19 20:05:42 INFO MemoryStore: ensureFreeSpace(3296) called with curMem=37687, maxMem=278019440
+15/01/19 20:05:42 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 3.2 KB, free 265.1 MB)
+15/01/19 20:05:42 INFO MemoryStore: ensureFreeSpace(2403) called with curMem=40983, maxMem=278019440
+15/01/19 20:05:42 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 2.3 KB, free 265.1 MB)
+15/01/19 20:05:42 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on localhost:42588 (size: 2.3 KB, free: 265.1 MB)
+15/01/19 20:05:42 INFO BlockManagerMaster: Updated info of block broadcast_1_piece0
+15/01/19 20:05:42 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:839
+15/01/19 20:05:42 INFO DAGScheduler: Submitting 2 missing tasks from Stage 0 (MapPartitionsRDD[2] at mapToPair at SimpleApp.java:33)
+15/01/19 20:05:42 INFO TaskSchedulerImpl: Adding task set 0.0 with 2 tasks
+15/01/19 20:05:42 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, PROCESS_LOCAL, 1354 bytes)
+15/01/19 20:05:42 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, localhost, PROCESS_LOCAL, 1354 bytes)
+15/01/19 20:05:42 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+15/01/19 20:05:42 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+15/01/19 20:05:42 INFO Executor: Fetching http://10.10.21.40:55794/jars/simple-project-1.0.jar with timestamp 1421665542111
+15/01/19 20:05:42 INFO Utils: Fetching http://10.10.21.40:55794/jars/simple-project-1.0.jar to /tmp/spark-e68127b0-e209-49f3-84dc-9f183c52cf8e/fetchFileTemp3334941175144470437.tmp
+15/01/19 20:05:42 INFO Executor: Adding file:/tmp/spark-e68127b0-e209-49f3-84dc-9f183c52cf8e/simple-project-1.0.jar to class loader
+15/01/19 20:05:42 INFO HadoopRDD: Input split: file:/home/lks21c/repo/spark/sample/in:0+27944643
+15/01/19 20:05:42 INFO HadoopRDD: Input split: file:/home/lks21c/repo/spark/sample/in:27944643+27944643
+15/01/19 20:05:47 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1898 bytes result sent to driver
+15/01/19 20:05:47 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 1898 bytes result sent to driver
+15/01/19 20:05:47 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 4944 ms on localhost (1/2)
+15/01/19 20:05:47 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 4948 ms on localhost (2/2)
+15/01/19 20:05:47 INFO DAGScheduler: Stage 0 (mapToPair at SimpleApp.java:33) finished in 4.967 s
+15/01/19 20:05:47 INFO DAGScheduler: looking for newly runnable stages
+15/01/19 20:05:47 INFO DAGScheduler: running: Set()
+15/01/19 20:05:47 INFO DAGScheduler: waiting: Set(Stage 1)
+15/01/19 20:05:47 INFO DAGScheduler: failed: Set()
+15/01/19 20:05:47 INFO DAGScheduler: Missing parents for Stage 1: List()
+15/01/19 20:05:47 INFO DAGScheduler: Submitting Stage 1 (ShuffledRDD[3] at partitionBy at SimpleApp.java:40), which is now runnable
+15/01/19 20:05:47 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+15/01/19 20:05:47 INFO MemoryStore: ensureFreeSpace(1792) called with curMem=43386, maxMem=278019440
+15/01/19 20:05:47 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 1792.0 B, free 265.1 MB)
+15/01/19 20:05:47 INFO MemoryStore: ensureFreeSpace(1319) called with curMem=45178, maxMem=278019440
+15/01/19 20:05:47 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 1319.0 B, free 265.1 MB)
+15/01/19 20:05:47 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on localhost:42588 (size: 1319.0 B, free: 265.1 MB)
+15/01/19 20:05:47 INFO BlockManagerMaster: Updated info of block broadcast_2_piece0
+15/01/19 20:05:47 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:839
+15/01/19 20:05:47 INFO DAGScheduler: Submitting 4 missing tasks from Stage 1 (ShuffledRDD[3] at partitionBy at SimpleApp.java:40)
+15/01/19 20:05:47 INFO TaskSchedulerImpl: Adding task set 1.0 with 4 tasks
+15/01/19 20:05:47 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 2, localhost, PROCESS_LOCAL, 1118 bytes)
+15/01/19 20:05:47 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 3, localhost, PROCESS_LOCAL, 1118 bytes)
+15/01/19 20:05:47 INFO TaskSetManager: Starting task 2.0 in stage 1.0 (TID 4, localhost, PROCESS_LOCAL, 1118 bytes)
+15/01/19 20:05:47 INFO TaskSetManager: Starting task 3.0 in stage 1.0 (TID 5, localhost, PROCESS_LOCAL, 1118 bytes)
+15/01/19 20:05:47 INFO Executor: Running task 0.0 in stage 1.0 (TID 2)
+15/01/19 20:05:47 INFO Executor: Running task 1.0 in stage 1.0 (TID 3)
+15/01/19 20:05:47 INFO Executor: Running task 2.0 in stage 1.0 (TID 4)
+15/01/19 20:05:47 INFO CacheManager: Partition rdd_3_1 not found, computing it
+15/01/19 20:05:47 INFO CacheManager: Partition rdd_3_2 not found, computing it
+15/01/19 20:05:47 INFO CacheManager: Partition rdd_3_0 not found, computing it
+15/01/19 20:05:47 INFO Executor: Running task 3.0 in stage 1.0 (TID 5)
+15/01/19 20:05:47 INFO CacheManager: Partition rdd_3_3 not found, computing it
+15/01/19 20:05:47 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 2 blocks
+15/01/19 20:05:47 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 2 blocks
+15/01/19 20:05:47 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 14 ms
+15/01/19 20:05:47 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 2 blocks
+15/01/19 20:05:47 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 16 ms
+15/01/19 20:05:47 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 3 ms
+15/01/19 20:05:47 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 2 blocks
+15/01/19 20:05:47 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 18 ms
+15/01/19 20:05:51 INFO MemoryStore: ensureFreeSpace(57000016) called with curMem=46497, maxMem=278019440
+15/01/19 20:05:51 INFO MemoryStore: Block rdd_3_0 stored as values in memory (estimated size 54.4 MB, free 210.7 MB)
+15/01/19 20:05:51 INFO BlockManagerInfo: Added rdd_3_0 in memory on localhost:42588 (size: 54.4 MB, free: 210.8 MB)
+15/01/19 20:05:51 INFO BlockManagerMaster: Updated info of block rdd_3_0
+15/01/19 20:05:51 INFO Executor: Finished task 0.0 in stage 1.0 (TID 2). 1431 bytes result sent to driver
+15/01/19 20:05:51 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 2) in 3571 ms on localhost (1/4)
+15/01/19 20:05:51 INFO MemoryStore: ensureFreeSpace(57000016) called with curMem=57046513, maxMem=278019440
+15/01/19 20:05:51 INFO MemoryStore: Block rdd_3_2 stored as values in memory (estimated size 54.4 MB, free 156.4 MB)
+15/01/19 20:05:51 INFO BlockManagerInfo: Added rdd_3_2 in memory on localhost:42588 (size: 54.4 MB, free: 156.4 MB)
+15/01/19 20:05:51 INFO BlockManagerMaster: Updated info of block rdd_3_2
+15/01/19 20:05:51 INFO Executor: Finished task 2.0 in stage 1.0 (TID 4). 1431 bytes result sent to driver
+15/01/19 20:05:51 INFO TaskSetManager: Finished task 2.0 in stage 1.0 (TID 4) in 4067 ms on localhost (2/4)
+15/01/19 20:05:52 INFO MemoryStore: ensureFreeSpace(57000016) called with curMem=114046529, maxMem=278019440
+15/01/19 20:05:52 INFO MemoryStore: Block rdd_3_3 stored as values in memory (estimated size 54.4 MB, free 102.0 MB)
+15/01/19 20:05:52 INFO BlockManagerInfo: Added rdd_3_3 in memory on localhost:42588 (size: 54.4 MB, free: 102.1 MB)
+15/01/19 20:05:52 INFO BlockManagerMaster: Updated info of block rdd_3_3
+15/01/19 20:05:52 INFO Executor: Finished task 3.0 in stage 1.0 (TID 5). 1431 bytes result sent to driver
+15/01/19 20:05:52 INFO TaskSetManager: Finished task 3.0 in stage 1.0 (TID 5) in 4167 ms on localhost (3/4)
+15/01/19 20:05:52 INFO MemoryStore: ensureFreeSpace(57000016) called with curMem=171046545, maxMem=278019440
+15/01/19 20:05:52 INFO MemoryStore: Block rdd_3_1 stored as values in memory (estimated size 54.4 MB, free 47.7 MB)
+15/01/19 20:05:52 INFO BlockManagerInfo: Added rdd_3_1 in memory on localhost:42588 (size: 54.4 MB, free: 47.7 MB)
+15/01/19 20:05:52 INFO BlockManagerMaster: Updated info of block rdd_3_1
+15/01/19 20:05:52 INFO Executor: Finished task 1.0 in stage 1.0 (TID 3). 1431 bytes result sent to driver
+15/01/19 20:05:52 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 3) in 4372 ms on localhost (4/4)
+15/01/19 20:05:52 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+15/01/19 20:05:52 INFO DAGScheduler: Stage 1 (count at SimpleApp.java:41) finished in 4.375 s
+15/01/19 20:05:52 INFO DAGScheduler: Job 0 finished: count at SimpleApp.java:41, took 9.532006 s
 scorePerMemberKey count = 3000000
 scorePerMemberKey partition size = 4
-15/01/19 18:48:38 INFO SparkContext: Starting job: sortByKey at SimpleApp.java:44
-15/01/19 18:48:38 INFO MapOutputTrackerMaster: Size of output statuses for shuffle 0 is 156 bytes
-15/01/19 18:48:38 INFO DAGScheduler: Got job 1 (sortByKey at SimpleApp.java:44) with 4 output partitions (allowLocal=false)
-15/01/19 18:48:38 INFO DAGScheduler: Final stage: Stage 3(sortByKey at SimpleApp.java:44)
-15/01/19 18:48:38 INFO DAGScheduler: Parents of final stage: List(Stage 2)
-15/01/19 18:48:38 INFO DAGScheduler: Missing parents: List()
-15/01/19 18:48:38 INFO DAGScheduler: Submitting Stage 3 (MapPartitionsRDD[5] at sortByKey at SimpleApp.java:44), which has no missing parents
-15/01/19 18:48:38 INFO MemoryStore: ensureFreeSpace(2936) called with curMem=228046561, maxMem=278019440
-15/01/19 18:48:38 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 2.9 KB, free 47.7 MB)
-15/01/19 18:48:38 INFO MemoryStore: ensureFreeSpace(2105) called with curMem=228049497, maxMem=278019440
-15/01/19 18:48:38 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 2.1 KB, free 47.7 MB)
-15/01/19 18:48:38 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on localhost:48374 (size: 2.1 KB, free: 47.7 MB)
-15/01/19 18:48:38 INFO BlockManagerMaster: Updated info of block broadcast_3_piece0
-15/01/19 18:48:38 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:839
-15/01/19 18:48:38 INFO DAGScheduler: Submitting 4 missing tasks from Stage 3 (MapPartitionsRDD[5] at sortByKey at SimpleApp.java:44)
-15/01/19 18:48:38 INFO TaskSchedulerImpl: Adding task set 3.0 with 4 tasks
-15/01/19 18:48:38 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 6, localhost, PROCESS_LOCAL, 1118 bytes)
-15/01/19 18:48:38 INFO TaskSetManager: Starting task 1.0 in stage 3.0 (TID 7, localhost, PROCESS_LOCAL, 1118 bytes)
-15/01/19 18:48:38 INFO TaskSetManager: Starting task 2.0 in stage 3.0 (TID 8, localhost, PROCESS_LOCAL, 1118 bytes)
-15/01/19 18:48:38 INFO TaskSetManager: Starting task 3.0 in stage 3.0 (TID 9, localhost, PROCESS_LOCAL, 1118 bytes)
-15/01/19 18:48:38 INFO Executor: Running task 0.0 in stage 3.0 (TID 6)
-15/01/19 18:48:38 INFO Executor: Running task 2.0 in stage 3.0 (TID 8)
-15/01/19 18:48:38 INFO Executor: Running task 1.0 in stage 3.0 (TID 7)
-15/01/19 18:48:38 INFO Executor: Running task 3.0 in stage 3.0 (TID 9)
-15/01/19 18:48:38 INFO BlockManager: Found block rdd_3_1 locally
-15/01/19 18:48:38 INFO BlockManager: Found block rdd_3_0 locally
-15/01/19 18:48:38 INFO BlockManager: Found block rdd_3_3 locally
-15/01/19 18:48:38 INFO BlockManager: Found block rdd_3_2 locally
-15/01/19 18:48:38 INFO Executor: Finished task 2.0 in stage 3.0 (TID 8). 2520 bytes result sent to driver
-15/01/19 18:48:38 INFO TaskSetManager: Finished task 2.0 in stage 3.0 (TID 8) in 82 ms on localhost (1/4)
-15/01/19 18:48:38 INFO Executor: Finished task 3.0 in stage 3.0 (TID 9). 2520 bytes result sent to driver
-15/01/19 18:48:38 INFO Executor: Finished task 1.0 in stage 3.0 (TID 7). 2520 bytes result sent to driver
-15/01/19 18:48:38 INFO TaskSetManager: Finished task 3.0 in stage 3.0 (TID 9) in 88 ms on localhost (2/4)
-15/01/19 18:48:38 INFO TaskSetManager: Finished task 1.0 in stage 3.0 (TID 7) in 93 ms on localhost (3/4)
-15/01/19 18:48:38 INFO Executor: Finished task 0.0 in stage 3.0 (TID 6). 2520 bytes result sent to driver
-15/01/19 18:48:38 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 6) in 96 ms on localhost (4/4)
-15/01/19 18:48:38 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool
-15/01/19 18:48:38 INFO DAGScheduler: Stage 3 (sortByKey at SimpleApp.java:44) finished in 0.096 s
-15/01/19 18:48:38 INFO DAGScheduler: Job 1 finished: sortByKey at SimpleApp.java:44, took 0.112957 s
-15/01/19 18:48:39 INFO BlockManager: Removing broadcast 3
-15/01/19 18:48:39 INFO BlockManager: Removing block broadcast_3_piece0
-15/01/19 18:48:39 INFO MemoryStore: Block broadcast_3_piece0 of size 2105 dropped from memory (free 49969943)
-15/01/19 18:48:39 INFO BlockManagerInfo: Removed broadcast_3_piece0 on localhost:48374 in memory (size: 2.1 KB, free: 47.7 MB)
-15/01/19 18:48:39 INFO BlockManagerMaster: Updated info of block broadcast_3_piece0
-15/01/19 18:48:39 INFO BlockManager: Removing block broadcast_3
-15/01/19 18:48:39 INFO MemoryStore: Block broadcast_3 of size 2936 dropped from memory (free 49972879)
-15/01/19 18:48:39 INFO ContextCleaner: Cleaned broadcast 3
-15/01/19 18:48:39 INFO BlockManager: Removing broadcast 2
-15/01/19 18:48:39 INFO BlockManager: Removing block broadcast_2_piece0
-15/01/19 18:48:39 INFO MemoryStore: Block broadcast_2_piece0 of size 1319 dropped from memory (free 49974198)
-15/01/19 18:48:39 INFO BlockManagerInfo: Removed broadcast_2_piece0 on localhost:48374 in memory (size: 1319.0 B, free: 47.7 MB)
-15/01/19 18:48:39 INFO BlockManagerMaster: Updated info of block broadcast_2_piece0
-15/01/19 18:48:39 INFO BlockManager: Removing block broadcast_2
-15/01/19 18:48:39 INFO MemoryStore: Block broadcast_2 of size 1792 dropped from memory (free 49975990)
-15/01/19 18:48:39 INFO ContextCleaner: Cleaned broadcast 2
-15/01/19 18:48:39 INFO BlockManager: Removing broadcast 1
-15/01/19 18:48:39 INFO BlockManager: Removing block broadcast_1_piece0
-15/01/19 18:48:39 INFO MemoryStore: Block broadcast_1_piece0 of size 2403 dropped from memory (free 49978393)
-15/01/19 18:48:39 INFO BlockManagerInfo: Removed broadcast_1_piece0 on localhost:48374 in memory (size: 2.3 KB, free: 47.7 MB)
-15/01/19 18:48:39 INFO BlockManagerMaster: Updated info of block broadcast_1_piece0
-15/01/19 18:48:39 INFO BlockManager: Removing block broadcast_1
-15/01/19 18:48:39 INFO MemoryStore: Block broadcast_1 of size 3296 dropped from memory (free 49981689)
-15/01/19 18:48:39 INFO ContextCleaner: Cleaned broadcast 1
-15/01/19 18:48:39 INFO SparkContext: Starting job: saveAsTextFile at SimpleApp.java:45
-15/01/19 18:48:39 INFO DAGScheduler: Registering RDD 3 (partitionBy at SimpleApp.java:40)
-15/01/19 18:48:39 INFO DAGScheduler: Got job 2 (saveAsTextFile at SimpleApp.java:45) with 4 output partitions (allowLocal=false)
-15/01/19 18:48:39 INFO DAGScheduler: Final stage: Stage 6(saveAsTextFile at SimpleApp.java:45)
-15/01/19 18:48:39 INFO DAGScheduler: Parents of final stage: List(Stage 5)
-15/01/19 18:48:39 INFO DAGScheduler: Missing parents: List(Stage 5)
-15/01/19 18:48:39 INFO DAGScheduler: Submitting Stage 5 (ShuffledRDD[3] at partitionBy at SimpleApp.java:40), which has no missing parents
-15/01/19 18:48:39 INFO MemoryStore: ensureFreeSpace(2824) called with curMem=228037751, maxMem=278019440
-15/01/19 18:48:39 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 2.8 KB, free 47.7 MB)
-15/01/19 18:48:39 INFO MemoryStore: ensureFreeSpace(2085) called with curMem=228040575, maxMem=278019440
-15/01/19 18:48:39 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 2.0 KB, free 47.7 MB)
-15/01/19 18:48:39 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on localhost:48374 (size: 2.0 KB, free: 47.7 MB)
-15/01/19 18:48:39 INFO BlockManagerMaster: Updated info of block broadcast_4_piece0
-15/01/19 18:48:39 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:839
-15/01/19 18:48:39 INFO DAGScheduler: Submitting 4 missing tasks from Stage 5 (ShuffledRDD[3] at partitionBy at SimpleApp.java:40)
-15/01/19 18:48:39 INFO TaskSchedulerImpl: Adding task set 5.0 with 4 tasks
-15/01/19 18:48:39 INFO TaskSetManager: Starting task 0.0 in stage 5.0 (TID 10, localhost, PROCESS_LOCAL, 1107 bytes)
-15/01/19 18:48:39 INFO TaskSetManager: Starting task 1.0 in stage 5.0 (TID 11, localhost, PROCESS_LOCAL, 1107 bytes)
-15/01/19 18:48:39 INFO TaskSetManager: Starting task 2.0 in stage 5.0 (TID 12, localhost, PROCESS_LOCAL, 1107 bytes)
-15/01/19 18:48:39 INFO TaskSetManager: Starting task 3.0 in stage 5.0 (TID 13, localhost, PROCESS_LOCAL, 1107 bytes)
-15/01/19 18:48:39 INFO Executor: Running task 0.0 in stage 5.0 (TID 10)
-15/01/19 18:48:39 INFO Executor: Running task 2.0 in stage 5.0 (TID 12)
-15/01/19 18:48:39 INFO Executor: Running task 3.0 in stage 5.0 (TID 13)
-15/01/19 18:48:39 INFO Executor: Running task 1.0 in stage 5.0 (TID 11)
-15/01/19 18:48:39 INFO BlockManager: Found block rdd_3_1 locally
-15/01/19 18:48:39 INFO BlockManager: Found block rdd_3_3 locally
-15/01/19 18:48:39 INFO BlockManager: Found block rdd_3_2 locally
-15/01/19 18:48:39 INFO BlockManager: Found block rdd_3_0 locally
-15/01/19 18:48:41 INFO Executor: Finished task 1.0 in stage 5.0 (TID 11). 1898 bytes result sent to driver
-15/01/19 18:48:41 INFO TaskSetManager: Finished task 1.0 in stage 5.0 (TID 11) in 2050 ms on localhost (1/4)
-15/01/19 18:48:41 INFO Executor: Finished task 2.0 in stage 5.0 (TID 12). 1898 bytes result sent to driver
-15/01/19 18:48:41 INFO TaskSetManager: Finished task 2.0 in stage 5.0 (TID 12) in 2190 ms on localhost (2/4)
-15/01/19 18:48:42 INFO Executor: Finished task 0.0 in stage 5.0 (TID 10). 1898 bytes result sent to driver
-15/01/19 18:48:42 INFO TaskSetManager: Finished task 0.0 in stage 5.0 (TID 10) in 2313 ms on localhost (3/4)
-15/01/19 18:48:42 INFO Executor: Finished task 3.0 in stage 5.0 (TID 13). 1898 bytes result sent to driver
-15/01/19 18:48:42 INFO TaskSetManager: Finished task 3.0 in stage 5.0 (TID 13) in 2390 ms on localhost (4/4)
-15/01/19 18:48:42 INFO TaskSchedulerImpl: Removed TaskSet 5.0, whose tasks have all completed, from pool
-15/01/19 18:48:42 INFO DAGScheduler: Stage 5 (partitionBy at SimpleApp.java:40) finished in 2.392 s
-15/01/19 18:48:42 INFO DAGScheduler: looking for newly runnable stages
-15/01/19 18:48:42 INFO DAGScheduler: running: Set()
-15/01/19 18:48:42 INFO DAGScheduler: waiting: Set(Stage 6)
-15/01/19 18:48:42 INFO DAGScheduler: failed: Set()
-15/01/19 18:48:42 INFO DAGScheduler: Missing parents for Stage 6: List()
-15/01/19 18:48:42 INFO DAGScheduler: Submitting Stage 6 (MapPartitionsRDD[7] at saveAsTextFile at SimpleApp.java:45), which is now runnable
-15/01/19 18:48:42 INFO MemoryStore: ensureFreeSpace(18152) called with curMem=228042660, maxMem=278019440
-15/01/19 18:48:42 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 17.7 KB, free 47.6 MB)
-15/01/19 18:48:42 INFO MemoryStore: ensureFreeSpace(13251) called with curMem=228060812, maxMem=278019440
-15/01/19 18:48:42 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 12.9 KB, free 47.6 MB)
-15/01/19 18:48:42 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on localhost:48374 (size: 12.9 KB, free: 47.7 MB)
-15/01/19 18:48:42 INFO BlockManagerMaster: Updated info of block broadcast_5_piece0
-15/01/19 18:48:42 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:839
-15/01/19 18:48:42 INFO DAGScheduler: Submitting 4 missing tasks from Stage 6 (MapPartitionsRDD[7] at saveAsTextFile at SimpleApp.java:45)
-15/01/19 18:48:42 INFO TaskSchedulerImpl: Adding task set 6.0 with 4 tasks
-15/01/19 18:48:42 INFO TaskSetManager: Starting task 0.0 in stage 6.0 (TID 14, localhost, PROCESS_LOCAL, 1118 bytes)
-15/01/19 18:48:42 INFO TaskSetManager: Starting task 1.0 in stage 6.0 (TID 15, localhost, PROCESS_LOCAL, 1118 bytes)
-15/01/19 18:48:42 INFO TaskSetManager: Starting task 2.0 in stage 6.0 (TID 16, localhost, PROCESS_LOCAL, 1118 bytes)
-15/01/19 18:48:42 INFO TaskSetManager: Starting task 3.0 in stage 6.0 (TID 17, localhost, PROCESS_LOCAL, 1118 bytes)
-15/01/19 18:48:42 INFO Executor: Running task 1.0 in stage 6.0 (TID 15)
-15/01/19 18:48:42 INFO Executor: Running task 3.0 in stage 6.0 (TID 17)
-15/01/19 18:48:42 INFO Executor: Running task 2.0 in stage 6.0 (TID 16)
-15/01/19 18:48:42 INFO Executor: Running task 0.0 in stage 6.0 (TID 14)
-15/01/19 18:48:42 INFO ShuffleBlockFetcherIterator: Getting 4 non-empty blocks out of 4 blocks
-15/01/19 18:48:42 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
-15/01/19 18:48:42 INFO ShuffleBlockFetcherIterator: Getting 4 non-empty blocks out of 4 blocks
-15/01/19 18:48:42 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
-15/01/19 18:48:42 INFO ShuffleBlockFetcherIterator: Getting 4 non-empty blocks out of 4 blocks
-15/01/19 18:48:42 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 2 ms
-15/01/19 18:48:42 INFO ShuffleBlockFetcherIterator: Getting 4 non-empty blocks out of 4 blocks
-15/01/19 18:48:42 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
-15/01/19 18:48:42 INFO ExternalSorter: Thread 69 spilling in-memory map of 24.9 MB to disk (1 time so far)
-15/01/19 18:48:42 INFO ExternalSorter: Thread 63 spilling in-memory map of 24.9 MB to disk (1 time so far)
-15/01/19 18:48:42 INFO ExternalSorter: Thread 70 spilling in-memory map of 24.9 MB to disk (1 time so far)
-15/01/19 18:48:43 INFO ExternalSorter: Thread 64 spilling in-memory map of 24.9 MB to disk (1 time so far)
-15/01/19 18:48:44 INFO ExternalSorter: Thread 64 spilling in-memory map of 24.9 MB to disk (2 times so far)
-15/01/19 18:48:45 INFO BlockManager: Removing broadcast 4
-15/01/19 18:48:45 INFO BlockManager: Removing block broadcast_4_piece0
-15/01/19 18:48:45 INFO MemoryStore: Block broadcast_4_piece0 of size 2085 dropped from memory (free 49947462)
-15/01/19 18:48:45 INFO BlockManagerInfo: Removed broadcast_4_piece0 on localhost:48374 in memory (size: 2.0 KB, free: 47.7 MB)
-15/01/19 18:48:45 INFO BlockManagerMaster: Updated info of block broadcast_4_piece0
-15/01/19 18:48:45 INFO BlockManager: Removing block broadcast_4
-15/01/19 18:48:45 INFO MemoryStore: Block broadcast_4 of size 2824 dropped from memory (free 49950286)
-15/01/19 18:48:45 INFO ContextCleaner: Cleaned broadcast 4
-15/01/19 18:48:45 INFO ExternalSorter: Thread 69 spilling in-memory map of 24.9 MB to disk (2 times so far)
-15/01/19 18:48:46 INFO ExternalSorter: Thread 70 spilling in-memory map of 24.9 MB to disk (2 times so far)
-15/01/19 18:48:46 INFO ExternalSorter: Thread 63 spilling in-memory map of 24.9 MB to disk (2 times so far)
-15/01/19 18:48:48 INFO FileOutputCommitter: Saved output of task 'attempt_201501191848_0006_m_000003_17' to file:/home/lks21c/repo/spark/sample/out
-15/01/19 18:48:48 INFO SparkHadoopWriter: attempt_201501191848_0006_m_000003_17: Committed
-15/01/19 18:48:48 INFO Executor: Finished task 3.0 in stage 6.0 (TID 17). 824 bytes result sent to driver
-15/01/19 18:48:48 INFO TaskSetManager: Finished task 3.0 in stage 6.0 (TID 17) in 6793 ms on localhost (1/4)
-15/01/19 18:48:49 INFO FileOutputCommitter: Saved output of task 'attempt_201501191848_0006_m_000001_15' to file:/home/lks21c/repo/spark/sample/out
-15/01/19 18:48:49 INFO SparkHadoopWriter: attempt_201501191848_0006_m_000001_15: Committed
-15/01/19 18:48:49 INFO Executor: Finished task 1.0 in stage 6.0 (TID 15). 824 bytes result sent to driver
-15/01/19 18:48:49 INFO TaskSetManager: Finished task 1.0 in stage 6.0 (TID 15) in 6936 ms on localhost (2/4)
-15/01/19 18:48:49 INFO FileOutputCommitter: Saved output of task 'attempt_201501191848_0006_m_000000_14' to file:/home/lks21c/repo/spark/sample/out
-15/01/19 18:48:49 INFO SparkHadoopWriter: attempt_201501191848_0006_m_000000_14: Committed
-15/01/19 18:48:49 INFO Executor: Finished task 0.0 in stage 6.0 (TID 14). 824 bytes result sent to driver
-15/01/19 18:48:49 INFO TaskSetManager: Finished task 0.0 in stage 6.0 (TID 14) in 6952 ms on localhost (3/4)
-15/01/19 18:48:49 INFO FileOutputCommitter: Saved output of task 'attempt_201501191848_0006_m_000002_16' to file:/home/lks21c/repo/spark/sample/out
-15/01/19 18:48:49 INFO SparkHadoopWriter: attempt_201501191848_0006_m_000002_16: Committed
-15/01/19 18:48:49 INFO Executor: Finished task 2.0 in stage 6.0 (TID 16). 824 bytes result sent to driver
-15/01/19 18:48:49 INFO TaskSetManager: Finished task 2.0 in stage 6.0 (TID 16) in 7151 ms on localhost (4/4)
-15/01/19 18:48:49 INFO DAGScheduler: Stage 6 (saveAsTextFile at SimpleApp.java:45) finished in 7.139 s
-15/01/19 18:48:49 INFO TaskSchedulerImpl: Removed TaskSet 6.0, whose tasks have all completed, from pool
-15/01/19 18:48:49 INFO DAGScheduler: Job 2 finished: saveAsTextFile at SimpleApp.java:45, took 9.564581 s
+15/01/19 20:05:52 INFO SparkContext: Starting job: sortByKey at SimpleApp.java:44
+15/01/19 20:05:52 INFO MapOutputTrackerMaster: Size of output statuses for shuffle 0 is 156 bytes
+15/01/19 20:05:52 INFO DAGScheduler: Got job 1 (sortByKey at SimpleApp.java:44) with 4 output partitions (allowLocal=false)
+15/01/19 20:05:52 INFO DAGScheduler: Final stage: Stage 3(sortByKey at SimpleApp.java:44)
+15/01/19 20:05:52 INFO DAGScheduler: Parents of final stage: List(Stage 2)
+15/01/19 20:05:52 INFO DAGScheduler: Missing parents: List()
+15/01/19 20:05:52 INFO DAGScheduler: Submitting Stage 3 (MapPartitionsRDD[5] at sortByKey at SimpleApp.java:44), which has no missing parents
+15/01/19 20:05:52 INFO MemoryStore: ensureFreeSpace(2936) called with curMem=228046561, maxMem=278019440
+15/01/19 20:05:52 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 2.9 KB, free 47.7 MB)
+15/01/19 20:05:52 INFO MemoryStore: ensureFreeSpace(2105) called with curMem=228049497, maxMem=278019440
+15/01/19 20:05:52 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 2.1 KB, free 47.7 MB)
+15/01/19 20:05:52 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on localhost:42588 (size: 2.1 KB, free: 47.7 MB)
+15/01/19 20:05:52 INFO BlockManagerMaster: Updated info of block broadcast_3_piece0
+15/01/19 20:05:52 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:839
+15/01/19 20:05:52 INFO DAGScheduler: Submitting 4 missing tasks from Stage 3 (MapPartitionsRDD[5] at sortByKey at SimpleApp.java:44)
+15/01/19 20:05:52 INFO TaskSchedulerImpl: Adding task set 3.0 with 4 tasks
+15/01/19 20:05:52 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 6, localhost, PROCESS_LOCAL, 1118 bytes)
+15/01/19 20:05:52 INFO TaskSetManager: Starting task 1.0 in stage 3.0 (TID 7, localhost, PROCESS_LOCAL, 1118 bytes)
+15/01/19 20:05:52 INFO TaskSetManager: Starting task 2.0 in stage 3.0 (TID 8, localhost, PROCESS_LOCAL, 1118 bytes)
+15/01/19 20:05:52 INFO TaskSetManager: Starting task 3.0 in stage 3.0 (TID 9, localhost, PROCESS_LOCAL, 1118 bytes)
+15/01/19 20:05:52 INFO Executor: Running task 1.0 in stage 3.0 (TID 7)
+15/01/19 20:05:52 INFO Executor: Running task 0.0 in stage 3.0 (TID 6)
+15/01/19 20:05:52 INFO Executor: Running task 3.0 in stage 3.0 (TID 9)
+15/01/19 20:05:52 INFO Executor: Running task 2.0 in stage 3.0 (TID 8)
+15/01/19 20:05:52 INFO BlockManager: Found block rdd_3_0 locally
+15/01/19 20:05:52 INFO BlockManager: Found block rdd_3_3 locally
+15/01/19 20:05:52 INFO BlockManager: Found block rdd_3_2 locally
+15/01/19 20:05:52 INFO BlockManager: Found block rdd_3_1 locally
+15/01/19 20:05:52 INFO Executor: Finished task 0.0 in stage 3.0 (TID 6). 2520 bytes result sent to driver
+15/01/19 20:05:52 INFO Executor: Finished task 3.0 in stage 3.0 (TID 9). 2520 bytes result sent to driver
+15/01/19 20:05:52 INFO TaskSetManager: Finished task 3.0 in stage 3.0 (TID 9) in 246 ms on localhost (1/4)
+15/01/19 20:05:52 INFO Executor: Finished task 1.0 in stage 3.0 (TID 7). 2520 bytes result sent to driver
+15/01/19 20:05:52 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 6) in 251 ms on localhost (2/4)
+15/01/19 20:05:52 INFO TaskSetManager: Finished task 1.0 in stage 3.0 (TID 7) in 251 ms on localhost (3/4)
+15/01/19 20:05:52 INFO Executor: Finished task 2.0 in stage 3.0 (TID 8). 2520 bytes result sent to driver
+15/01/19 20:05:52 INFO TaskSetManager: Finished task 2.0 in stage 3.0 (TID 8) in 254 ms on localhost (4/4)
+15/01/19 20:05:52 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+15/01/19 20:05:52 INFO DAGScheduler: Stage 3 (sortByKey at SimpleApp.java:44) finished in 0.254 s
+15/01/19 20:05:52 INFO DAGScheduler: Job 1 finished: sortByKey at SimpleApp.java:44, took 0.300838 s
+15/01/19 20:05:54 INFO BlockManager: Removing broadcast 3
+15/01/19 20:05:54 INFO BlockManager: Removing block broadcast_3_piece0
+15/01/19 20:05:54 INFO MemoryStore: Block broadcast_3_piece0 of size 2105 dropped from memory (free 49969943)
+15/01/19 20:05:54 INFO BlockManagerInfo: Removed broadcast_3_piece0 on localhost:42588 in memory (size: 2.1 KB, free: 47.7 MB)
+15/01/19 20:05:54 INFO BlockManagerMaster: Updated info of block broadcast_3_piece0
+15/01/19 20:05:54 INFO BlockManager: Removing block broadcast_3
+15/01/19 20:05:54 INFO MemoryStore: Block broadcast_3 of size 2936 dropped from memory (free 49972879)
+15/01/19 20:05:54 INFO ContextCleaner: Cleaned broadcast 3
+15/01/19 20:05:54 INFO BlockManager: Removing broadcast 2
+15/01/19 20:05:54 INFO BlockManager: Removing block broadcast_2_piece0
+15/01/19 20:05:54 INFO MemoryStore: Block broadcast_2_piece0 of size 1319 dropped from memory (free 49974198)
+15/01/19 20:05:54 INFO BlockManagerInfo: Removed broadcast_2_piece0 on localhost:42588 in memory (size: 1319.0 B, free: 47.7 MB)
+15/01/19 20:05:54 INFO BlockManagerMaster: Updated info of block broadcast_2_piece0
+15/01/19 20:05:54 INFO BlockManager: Removing block broadcast_2
+15/01/19 20:05:54 INFO MemoryStore: Block broadcast_2 of size 1792 dropped from memory (free 49975990)
+15/01/19 20:05:54 INFO ContextCleaner: Cleaned broadcast 2
+15/01/19 20:05:54 INFO BlockManager: Removing broadcast 1
+15/01/19 20:05:54 INFO BlockManager: Removing block broadcast_1_piece0
+15/01/19 20:05:54 INFO MemoryStore: Block broadcast_1_piece0 of size 2403 dropped from memory (free 49978393)
+15/01/19 20:05:54 INFO BlockManagerInfo: Removed broadcast_1_piece0 on localhost:42588 in memory (size: 2.3 KB, free: 47.7 MB)
+15/01/19 20:05:54 INFO BlockManagerMaster: Updated info of block broadcast_1_piece0
+15/01/19 20:05:54 INFO BlockManager: Removing block broadcast_1
+15/01/19 20:05:54 INFO MemoryStore: Block broadcast_1 of size 3296 dropped from memory (free 49981689)
+15/01/19 20:05:54 INFO ContextCleaner: Cleaned broadcast 1
+15/01/19 20:05:54 INFO SparkContext: Starting job: saveAsTextFile at SimpleApp.java:45
+15/01/19 20:05:54 INFO DAGScheduler: Registering RDD 3 (partitionBy at SimpleApp.java:40)
+15/01/19 20:05:54 INFO DAGScheduler: Got job 2 (saveAsTextFile at SimpleApp.java:45) with 4 output partitions (allowLocal=false)
+15/01/19 20:05:54 INFO DAGScheduler: Final stage: Stage 6(saveAsTextFile at SimpleApp.java:45)
+15/01/19 20:05:54 INFO DAGScheduler: Parents of final stage: List(Stage 5)
+15/01/19 20:05:54 INFO DAGScheduler: Missing parents: List(Stage 5)
+15/01/19 20:05:54 INFO DAGScheduler: Submitting Stage 5 (ShuffledRDD[3] at partitionBy at SimpleApp.java:40), which has no missing parents
+15/01/19 20:05:54 INFO MemoryStore: ensureFreeSpace(2824) called with curMem=228037751, maxMem=278019440
+15/01/19 20:05:54 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 2.8 KB, free 47.7 MB)
+15/01/19 20:05:54 INFO MemoryStore: ensureFreeSpace(2085) called with curMem=228040575, maxMem=278019440
+15/01/19 20:05:54 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 2.0 KB, free 47.7 MB)
+15/01/19 20:05:54 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on localhost:42588 (size: 2.0 KB, free: 47.7 MB)
+15/01/19 20:05:54 INFO BlockManagerMaster: Updated info of block broadcast_4_piece0
+15/01/19 20:05:54 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:839
+15/01/19 20:05:54 INFO DAGScheduler: Submitting 4 missing tasks from Stage 5 (ShuffledRDD[3] at partitionBy at SimpleApp.java:40)
+15/01/19 20:05:54 INFO TaskSchedulerImpl: Adding task set 5.0 with 4 tasks
+15/01/19 20:05:54 INFO TaskSetManager: Starting task 0.0 in stage 5.0 (TID 10, localhost, PROCESS_LOCAL, 1107 bytes)
+15/01/19 20:05:54 INFO TaskSetManager: Starting task 1.0 in stage 5.0 (TID 11, localhost, PROCESS_LOCAL, 1107 bytes)
+15/01/19 20:05:54 INFO TaskSetManager: Starting task 2.0 in stage 5.0 (TID 12, localhost, PROCESS_LOCAL, 1107 bytes)
+15/01/19 20:05:54 INFO TaskSetManager: Starting task 3.0 in stage 5.0 (TID 13, localhost, PROCESS_LOCAL, 1107 bytes)
+15/01/19 20:05:54 INFO Executor: Running task 0.0 in stage 5.0 (TID 10)
+15/01/19 20:05:54 INFO Executor: Running task 1.0 in stage 5.0 (TID 11)
+15/01/19 20:05:54 INFO Executor: Running task 2.0 in stage 5.0 (TID 12)
+15/01/19 20:05:54 INFO Executor: Running task 3.0 in stage 5.0 (TID 13)
+15/01/19 20:05:54 INFO BlockManager: Found block rdd_3_1 locally
+15/01/19 20:05:54 INFO BlockManager: Found block rdd_3_3 locally
+15/01/19 20:05:54 INFO BlockManager: Found block rdd_3_2 locally
+15/01/19 20:05:54 INFO BlockManager: Found block rdd_3_0 locally
+15/01/19 20:05:56 INFO Executor: Finished task 0.0 in stage 5.0 (TID 10). 1898 bytes result sent to driver
+15/01/19 20:05:56 INFO TaskSetManager: Finished task 0.0 in stage 5.0 (TID 10) in 2421 ms on localhost (1/4)
+15/01/19 20:05:56 INFO Executor: Finished task 2.0 in stage 5.0 (TID 12). 1898 bytes result sent to driver
+15/01/19 20:05:56 INFO TaskSetManager: Finished task 2.0 in stage 5.0 (TID 12) in 2699 ms on localhost (2/4)
+15/01/19 20:05:57 INFO Executor: Finished task 1.0 in stage 5.0 (TID 11). 1898 bytes result sent to driver
+15/01/19 20:05:57 INFO TaskSetManager: Finished task 1.0 in stage 5.0 (TID 11) in 2889 ms on localhost (3/4)
+15/01/19 20:05:57 INFO Executor: Finished task 3.0 in stage 5.0 (TID 13). 1898 bytes result sent to driver
+15/01/19 20:05:57 INFO DAGScheduler: Stage 5 (partitionBy at SimpleApp.java:40) finished in 3.054 s
+15/01/19 20:05:57 INFO TaskSetManager: Finished task 3.0 in stage 5.0 (TID 13) in 3053 ms on localhost (4/4)
+15/01/19 20:05:57 INFO DAGScheduler: looking for newly runnable stages
+15/01/19 20:05:57 INFO DAGScheduler: running: Set()
+15/01/19 20:05:57 INFO TaskSchedulerImpl: Removed TaskSet 5.0, whose tasks have all completed, from pool 
+15/01/19 20:05:57 INFO DAGScheduler: waiting: Set(Stage 6)
+15/01/19 20:05:57 INFO DAGScheduler: failed: Set()
+15/01/19 20:05:57 INFO DAGScheduler: Missing parents for Stage 6: List()
+15/01/19 20:05:57 INFO DAGScheduler: Submitting Stage 6 (MapPartitionsRDD[7] at saveAsTextFile at SimpleApp.java:45), which is now runnable
+15/01/19 20:05:57 INFO MemoryStore: ensureFreeSpace(18152) called with curMem=228042660, maxMem=278019440
+15/01/19 20:05:57 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 17.7 KB, free 47.6 MB)
+15/01/19 20:05:57 INFO MemoryStore: ensureFreeSpace(13251) called with curMem=228060812, maxMem=278019440
+15/01/19 20:05:57 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 12.9 KB, free 47.6 MB)
+15/01/19 20:05:57 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on localhost:42588 (size: 12.9 KB, free: 47.7 MB)
+15/01/19 20:05:57 INFO BlockManagerMaster: Updated info of block broadcast_5_piece0
+15/01/19 20:05:57 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:839
+15/01/19 20:05:57 INFO DAGScheduler: Submitting 4 missing tasks from Stage 6 (MapPartitionsRDD[7] at saveAsTextFile at SimpleApp.java:45)
+15/01/19 20:05:57 INFO TaskSchedulerImpl: Adding task set 6.0 with 4 tasks
+15/01/19 20:05:57 INFO TaskSetManager: Starting task 0.0 in stage 6.0 (TID 14, localhost, PROCESS_LOCAL, 1118 bytes)
+15/01/19 20:05:57 INFO TaskSetManager: Starting task 1.0 in stage 6.0 (TID 15, localhost, PROCESS_LOCAL, 1118 bytes)
+15/01/19 20:05:57 INFO TaskSetManager: Starting task 2.0 in stage 6.0 (TID 16, localhost, PROCESS_LOCAL, 1118 bytes)
+15/01/19 20:05:57 INFO TaskSetManager: Starting task 3.0 in stage 6.0 (TID 17, localhost, PROCESS_LOCAL, 1118 bytes)
+15/01/19 20:05:57 INFO Executor: Running task 2.0 in stage 6.0 (TID 16)
+15/01/19 20:05:57 INFO Executor: Running task 0.0 in stage 6.0 (TID 14)
+15/01/19 20:05:57 INFO Executor: Running task 3.0 in stage 6.0 (TID 17)
+15/01/19 20:05:57 INFO Executor: Running task 1.0 in stage 6.0 (TID 15)
+15/01/19 20:05:57 INFO ShuffleBlockFetcherIterator: Getting 4 non-empty blocks out of 4 blocks
+15/01/19 20:05:57 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 11 ms
+15/01/19 20:05:57 INFO ShuffleBlockFetcherIterator: Getting 4 non-empty blocks out of 4 blocks
+15/01/19 20:05:57 INFO ShuffleBlockFetcherIterator: Getting 4 non-empty blocks out of 4 blocks
+15/01/19 20:05:57 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 10 ms
+15/01/19 20:05:57 INFO ShuffleBlockFetcherIterator: Getting 4 non-empty blocks out of 4 blocks
+15/01/19 20:05:57 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+15/01/19 20:05:57 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 9 ms
+15/01/19 20:05:58 INFO ExternalSorter: Thread 69 spilling in-memory map of 24.9 MB to disk (1 time so far)
+15/01/19 20:05:58 INFO ExternalSorter: Thread 64 spilling in-memory map of 24.9 MB to disk (1 time so far)
+15/01/19 20:05:58 INFO ExternalSorter: Thread 70 spilling in-memory map of 24.9 MB to disk (1 time so far)
+15/01/19 20:05:58 INFO ExternalSorter: Thread 63 spilling in-memory map of 24.9 MB to disk (1 time so far)
+15/01/19 20:05:59 INFO ExternalSorter: Thread 69 spilling in-memory map of 24.9 MB to disk (2 times so far)
+15/01/19 20:05:59 INFO ExternalSorter: Thread 64 spilling in-memory map of 24.9 MB to disk (2 times so far)
+15/01/19 20:06:00 INFO BlockManager: Removing broadcast 4
+15/01/19 20:06:00 INFO BlockManager: Removing block broadcast_4_piece0
+15/01/19 20:06:00 INFO MemoryStore: Block broadcast_4_piece0 of size 2085 dropped from memory (free 49947462)
+15/01/19 20:06:00 INFO BlockManagerInfo: Removed broadcast_4_piece0 on localhost:42588 in memory (size: 2.0 KB, free: 47.7 MB)
+15/01/19 20:06:00 INFO BlockManagerMaster: Updated info of block broadcast_4_piece0
+15/01/19 20:06:00 INFO BlockManager: Removing block broadcast_4
+15/01/19 20:06:00 INFO MemoryStore: Block broadcast_4 of size 2824 dropped from memory (free 49950286)
+15/01/19 20:06:00 INFO ContextCleaner: Cleaned broadcast 4
+15/01/19 20:06:00 INFO ExternalSorter: Thread 63 spilling in-memory map of 24.9 MB to disk (2 times so far)
+15/01/19 20:06:00 INFO ExternalSorter: Thread 70 spilling in-memory map of 24.9 MB to disk (2 times so far)
+15/01/19 20:06:02 INFO FileOutputCommitter: Saved output of task 'attempt_201501192005_0006_m_000003_17' to file:/home/lks21c/repo/spark/sample/out
+15/01/19 20:06:02 INFO SparkHadoopWriter: attempt_201501192005_0006_m_000003_17: Committed
+15/01/19 20:06:02 INFO Executor: Finished task 3.0 in stage 6.0 (TID 17). 824 bytes result sent to driver
+15/01/19 20:06:02 INFO TaskSetManager: Finished task 3.0 in stage 6.0 (TID 17) in 5774 ms on localhost (1/4)
+15/01/19 20:06:03 INFO FileOutputCommitter: Saved output of task 'attempt_201501192005_0006_m_000002_16' to file:/home/lks21c/repo/spark/sample/out
+15/01/19 20:06:03 INFO SparkHadoopWriter: attempt_201501192005_0006_m_000002_16: Committed
+15/01/19 20:06:03 INFO Executor: Finished task 2.0 in stage 6.0 (TID 16). 824 bytes result sent to driver
+15/01/19 20:06:03 INFO TaskSetManager: Finished task 2.0 in stage 6.0 (TID 16) in 6068 ms on localhost (2/4)
+15/01/19 20:06:03 INFO FileOutputCommitter: Saved output of task 'attempt_201501192005_0006_m_000001_15' to file:/home/lks21c/repo/spark/sample/out
+15/01/19 20:06:03 INFO SparkHadoopWriter: attempt_201501192005_0006_m_000001_15: Committed
+15/01/19 20:06:03 INFO Executor: Finished task 1.0 in stage 6.0 (TID 15). 824 bytes result sent to driver
+15/01/19 20:06:03 INFO TaskSetManager: Finished task 1.0 in stage 6.0 (TID 15) in 6243 ms on localhost (3/4)
+15/01/19 20:06:03 INFO FileOutputCommitter: Saved output of task 'attempt_201501192005_0006_m_000000_14' to file:/home/lks21c/repo/spark/sample/out
+15/01/19 20:06:03 INFO SparkHadoopWriter: attempt_201501192005_0006_m_000000_14: Committed
+15/01/19 20:06:03 INFO Executor: Finished task 0.0 in stage 6.0 (TID 14). 824 bytes result sent to driver
+15/01/19 20:06:03 INFO TaskSetManager: Finished task 0.0 in stage 6.0 (TID 14) in 6375 ms on localhost (4/4)
+15/01/19 20:06:03 INFO TaskSchedulerImpl: Removed TaskSet 6.0, whose tasks have all completed, from pool 
+15/01/19 20:06:03 INFO DAGScheduler: Stage 6 (saveAsTextFile at SimpleApp.java:45) finished in 6.375 s
+15/01/19 20:06:03 INFO DAGScheduler: Job 2 finished: saveAsTextFile at SimpleApp.java:45, took 9.450667 s
+
