@@ -2,6 +2,7 @@
 import java.util.Arrays;
 
 import org.apache.spark.api.java.*;
+import org.apache.spark.HashPartitioner;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.function.FlatMapFunction;
 import org.apache.spark.api.java.function.Function;
@@ -20,11 +21,30 @@ public class SimpleApp {
     public static void main(String[] args) {
         conf = new SparkConf().setAppName("Lks21c Application");
         sc = new JavaSparkContext(conf);
-        
-        wordCount();
+
+        //wordCount();
+        sorting();
     }
 
-    private static void countLines() {
+    private static void sorting() {
+    	logData = sc.textFile("in");
+
+    	JavaPairRDD<Integer, Integer> scorePerMemberKey = logData.mapToPair(new PairFunction<String, Integer, Integer>() {
+
+			public Tuple2<Integer, Integer> call(String t) throws Exception {
+				Integer score = Integer.valueOf(t.trim().split(",")[0]);
+				Integer memberKey = Integer.valueOf(t.trim().split(",")[0]);
+				return new Tuple2<Integer, Integer>(score, memberKey);
+			}
+		}).partitionBy(new HashPartitioner(4));
+    	System.out.println("scorePerMemberKey count = " + scorePerMemberKey.count());
+    	System.out.println("scorePerMemberKey partition size = " + scorePerMemberKey.partitions().size());
+
+    	JavaPairRDD<Integer, Integer> sortedScorePerMemberKey = scorePerMemberKey.sortByKey();
+    	sortedScorePerMemberKey.saveAsTextFile("out");
+	}
+
+	private static void countLines() {
         logData = sc.textFile(logFile);
         long numAs = logData.filter(new Function<String, Boolean>() {
             public Boolean call(String s) {
@@ -62,10 +82,10 @@ public class SimpleApp {
         JavaPairRDD<String, String> result = rdd.filter(longWordFilter);
         System.out.println("longFilter complete");
     }
-    
+
     private static void wordCount() {
         logData = sc.textFile(logFile);
-        
+
         JavaRDD<String> words = logData.flatMap(new FlatMapFunction<String, String>() {
           public Iterable<String> call(String x) { return Arrays.asList(x.split(" ")); }
         });
@@ -76,7 +96,7 @@ public class SimpleApp {
           new Function2<Integer, Integer, Integer>() {
             public Integer call(Integer a, Integer b) { return a + b; }
         });
-        
+
         result.saveAsTextFile("result");
     }
 }
