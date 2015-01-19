@@ -8,6 +8,7 @@ import org.apache.spark.api.java.function.FlatMapFunction;
 import org.apache.spark.api.java.function.Function;
 import org.apache.spark.api.java.function.Function2;
 import org.apache.spark.api.java.function.PairFunction;
+import org.apache.spark.storage.StorageLevel;
 
 import scala.Tuple2;
 
@@ -36,7 +37,7 @@ public class SimpleApp {
 				Integer memberKey = Integer.valueOf(t.trim().split(",")[0]);
 				return new Tuple2<Integer, Integer>(score, memberKey);
 			}
-		}).partitionBy(new HashPartitioner(4));
+		}).partitionBy(new HashPartitioner(4)).persist(StorageLevel.MEMORY_ONLY());
     	System.out.println("scorePerMemberKey count = " + scorePerMemberKey.count());
     	System.out.println("scorePerMemberKey partition size = " + scorePerMemberKey.partitions().size());
 
