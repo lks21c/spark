@@ -25,7 +25,7 @@ public class SimpleApp {
 
     public static void main(String[] args) {
         conf = new SparkConf().setAppName("Lks21c Application");
-        //conf.set("spark.serializer", "org.apache.spark.serializer.KryoSerializer");
+        conf.set("spark.serializer", "org.apache.spark.serializer.KryoSerializer");
         sc = new JavaSparkContext(conf);
 
         sorting();
@@ -42,7 +42,7 @@ public class SimpleApp {
 				Integer memberKey = Integer.valueOf(arr[0].trim());
 				return new Tuple2<Integer, Integer>(score, memberKey);
 			}
-		}).partitionBy(new HashPartitioner(numberOfPartitions)).persist(StorageLevel.MEMORY_ONLY());
+		}).partitionBy(new HashPartitioner(numberOfPartitions)).persist(StorageLevel.MEMORY_ONLY_SER());
     	System.out.println("scorePerMemberKey count = " + scorePerMemberKey.count());
     	System.out.println("scorePerMemberKey partition size = " + scorePerMemberKey.partitions().size());
 
