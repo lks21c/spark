@@ -18,18 +18,24 @@ public class SimpleApp {
     static JavaRDD<String> logData;
     static String logFile = "README.md";
     static JavaPairRDD<String, String> rdd;
-    static int numberOfPartitions = 4;
+    static int numberOfPartitions = 4 * 3;
+
+    static JavaPairRDD<Integer, Integer> scorePerMemberKey;
+    static JavaPairRDD<Integer, Integer> sortedScorePerMemberKey;
 
     public static void main(String[] args) {
         conf = new SparkConf().setAppName("Lks21c Application");
+        //conf.set("spark.serializer", "org.apache.spark.serializer.KryoSerializer");
         sc = new JavaSparkContext(conf);
 
         sorting();
+
+        sc.close();
     }
 
     private static void sorting() {
     	logData = sc.textFile("in", numberOfPartitions);
-    	JavaPairRDD<Integer, Integer> scorePerMemberKey = logData.mapToPair(new PairFunction<String, Integer, Integer>() {
+    	scorePerMemberKey = logData.mapToPair(new PairFunction<String, Integer, Integer>() {
 			public Tuple2<Integer, Integer> call(String t) throws Exception {
 				String[] arr = t.trim().split(",");
 				Integer score = Integer.valueOf(arr[1].trim());
@@ -40,7 +46,7 @@ public class SimpleApp {
     	System.out.println("scorePerMemberKey count = " + scorePerMemberKey.count());
     	System.out.println("scorePerMemberKey partition size = " + scorePerMemberKey.partitions().size());
 
-    	JavaPairRDD<Integer, Integer> sortedScorePerMemberKey = scorePerMemberKey.sortByKey();
+    	sortedScorePerMemberKey = scorePerMemberKey.sortByKey();
     	sortedScorePerMemberKey.saveAsTextFile("out");
 	}
 
