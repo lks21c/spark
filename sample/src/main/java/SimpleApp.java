@@ -18,26 +18,25 @@ public class SimpleApp {
     static JavaRDD<String> logData;
     static String logFile = "README.md";
     static JavaPairRDD<String, String> rdd;
+    static int numberOfPartitions = 4;
 
     public static void main(String[] args) {
         conf = new SparkConf().setAppName("Lks21c Application");
         sc = new JavaSparkContext(conf);
 
-        //wordCount();
         sorting();
     }
 
     private static void sorting() {
-    	logData = sc.textFile("in");
-
+    	logData = sc.textFile("in", numberOfPartitions);
     	JavaPairRDD<Integer, Integer> scorePerMemberKey = logData.mapToPair(new PairFunction<String, Integer, Integer>() {
-
 			public Tuple2<Integer, Integer> call(String t) throws Exception {
-				Integer score = Integer.valueOf(t.trim().split(",")[0]);
-				Integer memberKey = Integer.valueOf(t.trim().split(",")[0]);
+				String[] arr = t.trim().split(",");
+				Integer score = Integer.valueOf(arr[1].trim());
+				Integer memberKey = Integer.valueOf(arr[0].trim());
 				return new Tuple2<Integer, Integer>(score, memberKey);
 			}
-		}).partitionBy(new HashPartitioner(4)).persist(StorageLevel.MEMORY_ONLY());
+		}).partitionBy(new HashPartitioner(numberOfPartitions)).persist(StorageLevel.MEMORY_ONLY());
     	System.out.println("scorePerMemberKey count = " + scorePerMemberKey.count());
     	System.out.println("scorePerMemberKey partition size = " + scorePerMemberKey.partitions().size());
 
